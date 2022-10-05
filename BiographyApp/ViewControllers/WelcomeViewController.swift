@@ -20,15 +20,5 @@ class WelcomeViewController: UIViewController {
         
         super.viewDidLoad()
         welcomeLabel.text = "Welcome \(transmittedUserName ?? "")"
-        makesLayerGradient()
-    }
-    private func makesLayerGradient() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [
-            UIColor.cyan.cgColor,
-            UIColor.orange.cgColor
-        ]
-        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
