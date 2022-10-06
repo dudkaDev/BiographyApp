@@ -18,6 +18,6 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         logOutButton.layer.cornerRadius = 5
-        welcomeLabel.text = "Welcome \(transmittedUserName ?? "")"
+        welcomeLabel.text = "Welcome, \(transmittedUserName ?? "")"
     }
 }
