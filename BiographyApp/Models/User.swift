@@ -7,15 +7,15 @@
 
 import Foundation
 
-struct UserData{
+struct User {
     let userName: String
     let password: String
-    let userInformation: UserInformation
+    let userInformation: Person
     
     init(
         userName: String = "Admin",
         password: String = "Admin",
-        userInformation: UserInformation
+        userInformation: Person
     ) {
         self.userName = userName
         self.password = password
@@ -23,15 +23,15 @@ struct UserData{
     }
 }
 
-struct UserInformation {
+struct Person {
     let name: String
     let surename: String
     let age: Int
     let location: String
     let userBiography: String
     
-    static func getUserData() -> UserInformation {
-        UserInformation(
+    static func getUserData() -> Person {
+        Person(
             name: "Andrey",
             surename: "Abakumov",
             age: 24,

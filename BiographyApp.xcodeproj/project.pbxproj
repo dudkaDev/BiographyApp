@@ -14,7 +14,7 @@
 		551D173928ED8028001B4695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551D173828ED8028001B4695 /* Assets.xcassets */; };
 		551D173C28ED8028001B4695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 551D173A28ED8028001B4695 /* LaunchScreen.storyboard */; };
 		551D174828ED8BB6001B4695 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D174728ED8BB6001B4695 /* WelcomeViewController.swift */; };
-		551D174A28EDAA8C001B4695 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D174928EDAA8C001B4695 /* Data.swift */; };
+		551D174A28EDAA8C001B4695 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D174928EDAA8C001B4695 /* User.swift */; };
 		551D174C28EDD2AB001B4695 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D174B28EDD2AB001B4695 /* AboutMeViewController.swift */; };
 		551D174E28EE4A09001B4695 /* BiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D174D28EE4A09001B4695 /* BiographyViewController.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +29,7 @@
 		551D173B28ED8028001B4695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		551D173D28ED8028001B4695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		551D174728ED8BB6001B4695 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		551D174928EDAA8C001B4695 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		551D174928EDAA8C001B4695 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		551D174B28EDD2AB001B4695 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		551D174D28EE4A09001B4695 /* BiographyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 		551D174628ED81B0001B4695 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				551D174928EDAA8C001B4695 /* Data.swift */,
+				551D174928EDAA8C001B4695 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,7 +184,7 @@
 			files = (
 				551D174E28EE4A09001B4695 /* BiographyViewController.swift in Sources */,
 				551D173428ED8024001B4695 /* LoginViewController.swift in Sources */,
-				551D174A28EDAA8C001B4695 /* Data.swift in Sources */,
+				551D174A28EDAA8C001B4695 /* User.swift in Sources */,
 				551D174828ED8BB6001B4695 /* WelcomeViewController.swift in Sources */,
 				551D173028ED8024001B4695 /* AppDelegate.swift in Sources */,
 				551D174C28EDD2AB001B4695 /* AboutMeViewController.swift in Sources */,

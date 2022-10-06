@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var logInButton: UIButton!
     
-    private let userData = UserData(userInformation: .getUserData())
+    private let userData = User(userInformation: .getUserData())
     
     override func viewDidLoad() {
         logInButton.layer.cornerRadius = 5

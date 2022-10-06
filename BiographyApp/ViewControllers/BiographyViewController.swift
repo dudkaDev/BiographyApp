@@ -11,7 +11,7 @@ class BiographyViewController: UIViewController {
     
     @IBOutlet var biographyLabel: UILabel!
     
-    private let userData = UserData(userInformation: .getUserData())
+    private let userData = User(userInformation: .getUserData())
     
     override func viewDidLoad() {
         super.viewDidLoad()

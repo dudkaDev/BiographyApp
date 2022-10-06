@@ -16,7 +16,7 @@ class AboutMeViewController: UIViewController {
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     
-    private let userData = UserData(userInformation: .getUserData())
+    private let userData = User(userInformation: .getUserData())
     
     override func viewDidLoad() {
         super.viewDidLoad()
