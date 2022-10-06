@@ -8,17 +8,19 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
     @IBOutlet var logInButton: UIButton!
     
-    private let userName = "Admin"
-    private let password = "Admin"
+    private let userData = UserData(userInformation: .getUserData())
     
     override func viewDidLoad() {
         logInButton.layer.cornerRadius = 5
+        
+        userNameTF.text = userData.userName
+        passwordTF.text = userData.password
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -30,14 +32,14 @@ class LoginViewController: UIViewController {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.transmittedUserName = userNameTF.text
     }
-
+    
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTF.text = ""
         passwordTF.text = ""
     }
     
     @IBAction func logInButtonPressed() {
-        guard userNameTF.text == userName && passwordTF.text == password else {
+        guard userNameTF.text == userData.userName && passwordTF.text == userData.password else {
             showAlert(
                 title: "Login failed",
                 message: "Please, enter correct User Name and Password",
@@ -50,8 +52,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Oops!", message: "Your user name is \(userName)")
-        : showAlert(title: "Oops!", message: "Your password is \(password)")
+        ? showAlert(title: "Oops!", message: "Your user name is \(userData.userName)")
+        : showAlert(title: "Oops!", message: "Your password is \(userData.password)")
     }
     
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
@@ -67,3 +69,4 @@ class LoginViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+

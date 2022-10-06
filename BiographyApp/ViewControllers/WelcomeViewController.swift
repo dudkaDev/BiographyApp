@@ -8,7 +8,7 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    
     @IBOutlet var welcomeLabel: UILabel!
     
     @IBOutlet var logOutButton: UIButton!
@@ -16,9 +16,8 @@ class WelcomeViewController: UIViewController {
     var transmittedUserName: String!
     
     override func viewDidLoad() {
-        logOutButton.layer.cornerRadius = 5
-        
         super.viewDidLoad()
+        logOutButton.layer.cornerRadius = 5
         welcomeLabel.text = "Welcome \(transmittedUserName ?? "")"
     }
 }
