@@ -13,11 +13,11 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet var logOutButton: UIButton!
     
-    var transmittedUserName: String!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         logOutButton.layer.cornerRadius = 5
-        welcomeLabel.text = "Welcome, \(transmittedUserName ?? "")"
+        welcomeLabel.text = "Welcome, \(user.person.fullName)!"
     }
 }

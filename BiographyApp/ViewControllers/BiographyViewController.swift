@@ -9,12 +9,12 @@ import UIKit
 
 class BiographyViewController: UIViewController {
     
-    @IBOutlet var biographyLabel: UILabel!
+    @IBOutlet var userBioTF: UITextView!
     
-    private let userData = User(userInformation: .getUserData())
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        biographyLabel.text = userData.userInformation.userBiography
+        userBioTF.text = user.person.bio
     }
 }

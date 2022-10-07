@@ -9,27 +9,30 @@ import UIKit
 
 class AboutMeViewController: UIViewController {
 
-    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var photoImage: UIImageView! {
+        didSet {
+            photoImage.layer.cornerRadius = photoImage.frame.height / 2
+        }
+    }
     
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var surenameLabel: UILabel!
+    @IBOutlet var surnameLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     
-    private let userData = User(userInformation: .getUserData())
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = userData.userInformation.name
-        surenameLabel.text = userData.userInformation.surename
-        ageLabel.text = String(userData.userInformation.age)
-        locationLabel.text = userData.userInformation.location
-        
-        editPhoto()
+        photoImage.image = UIImage(named: user.person.photo)
+        nameLabel.text = user.person.name
+        surnameLabel.text = user.person.surname
+        ageLabel.text = String(user.person.age)
+        locationLabel.text = user.person.location
     }
     
-    private func editPhoto() {
-        imageView.layer.cornerRadius = imageView.frame.width / 2
-        imageView.clipsToBounds = true
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let imageVC = segue.destination as? BiographyViewController else { return }
+        imageVC.user = user
     }
 }

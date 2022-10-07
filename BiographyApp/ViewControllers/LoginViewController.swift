@@ -14,13 +14,13 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var logInButton: UIButton!
     
-    private let userData = User(userInformation: .getUserData())
+    private let user = User.getUserData()
     
     override func viewDidLoad() {
         logInButton.layer.cornerRadius = 5
         
-        userNameTF.text = userData.userName
-        passwordTF.text = userData.password
+        userNameTF.text = user.login
+        passwordTF.text = user.password
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -31,9 +31,16 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewControllers = tabBarVC.viewControllers else { return }
-        viewControllers.forEach { viewController in
-            if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.transmittedUserName = userData.userName
+        
+        viewControllers.forEach {
+            if let welcomeVC = $0 as? WelcomeViewController {
+                welcomeVC.user = user
+            } else if let navigationVC = $0 as? UINavigationController {
+                let userInfoVC = navigationVC.topViewController
+                guard let userInfoVC = userInfoVC as? AboutMeViewController else {
+                    return
+                }
+                userInfoVC.user = user
             }
         }
     }
@@ -44,7 +51,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func logInButtonPressed() {
-        guard userNameTF.text == userData.userName && passwordTF.text == userData.password else {
+        guard userNameTF.text == user.login && passwordTF.text == user.password else {
             showAlert(
                 title: "Login failed",
                 message: "Please, enter correct User Name and Password",
@@ -57,8 +64,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Oops!", message: "Your user name is \(userData.userName)")
-        : showAlert(title: "Oops!", message: "Your password is \(userData.password)")
+        ? showAlert(title: "Oops!", message: "Your user name is \(user.login)")
+        : showAlert(title: "Oops!", message: "Your password is \(user.password)")
     }
     
     private func showAlert(title: String, message: String, textField: UITextField? = nil) {
